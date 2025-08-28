@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Appointment - Premium Auto Detail</title>
+    <meta name="description" content="Schedule your car detailing appointment online. Choose your service package, preferred date and time.">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Premium Auto Detail</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="packages.html" class="nav-link">Packages</a></li>
+                <li class="nav-item"><a href="schedule.html" class="nav-link">Schedule</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Schedule Your Appointment</h1>
+                <p>Book your car detailing service online. Fill out the form below and we'll contact you to confirm your appointment.</p>
+            </div>
+        </section>
+
+        <!-- Booking Form Section -->
+        <section class="section">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <form id="schedule-form" class="schedule-form">
+                        <h2 style="color: var(--primary-blue); margin-bottom: 2rem; text-align: center;">Book Your Service</h2>
+                        
+                        <!-- Personal Information -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="your.email@example.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="(555) 123-4567" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-preference">Preferred Contact Method</label>
+                                <select id="contact-preference" name="contact-preference" class="form-control">
+                                    <option value="phone">Phone Call</option>
+                                    <option value="text">Text Message</option>
+                                    <option value="email">Email</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Appointment Details -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Preferred Date *</label>
+                                <input type="date" id="date" name="date" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Preferred Time *</label>
+                                <select id="time" name="time" class="form-control" required>
+                                    <option value="">Select a time</option>
+                                    <option value="08:00">8:00 AM</option>
+                                    <option value="09:00">9:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                    <option value="17:00">5:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Service Selection -->
+                        <div class="form-group">
+                            <label for="package">Service Package *</label>
+                            <select id="package" name="package" class="form-control" required>
+                                <option value="">Select a package</option>
+                                <option value="maintenance">Maintenance Wash - $29.99</option>
+                                <option value="basic">Basic Clean - $49.99</option>
+                                <option value="premium">Premium Detail - $89.99 (Most Popular)</option>
+                                <option value="ultimate">Ultimate Package - $149.99</option>
+                            </select>
+                            <div style="margin-top: 0.5rem;">
+                                <span style="color: var(--text-gray); font-size: 0.9rem;">Selected price: </span>
+                                <span id="selected-price" class="price" style="font-size: 1.2rem; opacity: 0;"></span>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle Information -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="make">Vehicle Make *</label>
+                                <input type="text" id="make" name="make" class="form-control" placeholder="e.g., Toyota, Ford, BMW" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="model">Vehicle Model *</label>
+                                <input type="text" id="model" name="model" class="form-control" placeholder="e.g., Camry, F-150, X5" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="year">Year *</label>
+                                <input type="number" id="year" name="year" class="form-control" min="1990" max="2025" placeholder="2020" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="color">Vehicle Color</label>
+                                <input type="text" id="color" name="color" class="form-control" placeholder="e.g., White, Black, Silver">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="condition">Vehicle Condition</label>
+                            <select id="condition" name="condition" class="form-control">
+                                <option value="excellent">Excellent - Recently cleaned</option>
+                                <option value="good">Good - Normal wear</option>
+                                <option value="fair">Fair - Needs attention</option>
+                                <option value="poor">Poor - Heavy cleaning needed</option>
+                            </select>
+                        </div>
+
+                        <!-- Additional Information -->
+                        <div class="form-group">
+                            <label for="add-ons">Additional Services (Optional)</label>
+                            <div style="margin-top: 0.5rem;">
+                                <label style="display: flex; align-items: center; margin-bottom: 0.5rem; font-weight: normal;">
+                                    <input type="checkbox" name="add-ons" value="pet-hair" style="margin-right: 0.5rem;">
+                                    Pet Hair Removal (+$25)
+                                </label>
+                                <label style="display: flex; align-items: center; margin-bottom: 0.5rem; font-weight: normal;">
+                                    <input type="checkbox" name="add-ons" value="odor-elimination" style="margin-right: 0.5rem;">
+                                    Odor Elimination (+$35)
+                                </label>
+                                <label style="display: flex; align-items: center; margin-bottom: 0.5rem; font-weight: normal;">
+                                    <input type="checkbox" name="add-ons" value="convertible-top" style="margin-right: 0.5rem;">
+                                    Convertible Top Cleaning (+$40)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">Special Instructions or Notes</label>
+                            <textarea id="notes" name="notes" class="form-control" rows="4" placeholder="Please let us know about any specific concerns, stains, or special requests..."></textarea>
+                        </div>
+
+                        <!-- Pickup/Dropoff Options -->
+                        <div class="form-group">
+                            <label for="service-location">Service Location</label>
+                            <select id="service-location" name="service-location" class="form-control">
+                                <option value="shop">Drop off at our location</option>
+                                <option value="pickup">Mobile service (pickup/delivery)</option>
+                            </select>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">
+                                Mobile service available within 15 miles for an additional $20 fee.
+                            </p>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div style="text-align: center; margin-top: 3rem;">
+                            <button type="submit" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">
+                                Schedule Appointment
+                            </button>
+                        </div>
+
+                        <p style="color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-top: 1rem;">
+                            * Required fields. We'll contact you within 24 hours to confirm your appointment.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Hours Reminder -->
+        <section class="section" style="background-color: var(--secondary-dark);">
+            <div class="container">
+                <div class="contact-info" style="text-align: center; max-width: 600px; margin: 0 auto;">
+                    <h3>Business Hours</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                        <div>
+                            <h4>Monday - Friday</h4>
+                            <p>8:00 AM - 6:00 PM</p>
+                        </div>
+                        <div>
+                            <h4>Saturday</h4>
+                            <p>9:00 AM - 5:00 PM</p>
+                        </div>
+                        <div>
+                            <h4>Sunday</h4>
+                            <p>10:00 AM - 4:00 PM</p>
+                        </div>
+                    </div>
+                    <p style="margin-top: 2rem;">
+                        <strong>Phone:</strong> (555) 123-4567 | 
+                        <strong>Email:</strong> info@premiumautodetail.com
+                    </p>
+                    <p style="color: var(--text-muted); margin-top: 1rem;">
+                        For same-day appointments or urgent requests, please call us directly.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Premium Auto Detail. All rights reserved. | Professional car detailing services.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
